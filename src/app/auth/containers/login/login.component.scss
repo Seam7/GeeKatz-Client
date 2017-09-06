@@ -1,3 +1,25 @@
+@import '../../../../styles.scss';
+
 .centered {
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  flex-direction: column;
+}
+
+.container {
+  border-radius: 20px;
+  margin-top: 40px;
+  background-color: $c-primary;
+}
+
+.title {
+  color: $c-second;
+}
+
+.btn-center {
+  display: flex;
+  align-self: center;
+  margin-bottom: 10px;
 }
