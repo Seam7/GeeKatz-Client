@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+$c-primary: #6B7A8F;
+$c-second: #F7882F;
+$c-third: #F7C331;
+$c-fourth: #DCC7AA;
+
+
+
+.btn-primar {
+  background-color: $c-primary;
+  color: white;
+  border-radius: 30px;
+}
+
+.btn-second {
+  background-color: $c-second;
+  color: white;
+}
+
+.btn-third {
+  background-color: $c-third;
+  color: white;
+}
+
+.btn-fourth {
+  background-color: $c-fourth;
+  color: white;
+}
