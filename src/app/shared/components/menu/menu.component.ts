@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'gk-header',
+  selector: 'gk-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
