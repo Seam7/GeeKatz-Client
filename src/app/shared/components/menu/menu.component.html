@@ -1,0 +1,17 @@
+<div class="container">
+  <nav class="container-int border-content">
+    <div class="row">
+      <div [ngClass]="(this.router.url == '/auth/login' ||  this.router.url == '/auth/remember-pin') ? 'col-xs-12' : 'col-xs-5'">
+        <div class="logo-cont">
+          <img  [ngClass]="(this.router.url == '/auth/login' ||  this.router.url == '/auth/remember-pin') ? 'logo m-auto' : 'logo'"
+          src="./assets/images/logo.png" alt="Hello" title="Hello" />
+        </div>
+      </div>
+      <div *ngIf="!(this.router.url == '/auth/login' ||  this.router.url == '/auth/remember-pin')" class="col-xs-7">
+        <div class="session-end f-400">
+          <a class="blue-link" href="" (click)="closeSession($event)">Salir de la Sesión</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>

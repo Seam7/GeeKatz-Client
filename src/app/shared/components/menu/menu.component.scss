@@ -1,0 +1,38 @@
+nav {
+  position: relative;
+  background-color: #f1f1f1;
+  height: 100px;
+}
+
+.container-int .row, .col-xs-5 , .col-xs-12{
+  height: 100%;
+}
+
+.logo-cont {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.logo {
+  width: auto;
+  height: 70px;
+}
+
+.session-end {
+  float: right;
+  margin-top: 66px;
+}
+
+.session-end a {
+  text-decoration: underline;
+  font-size: 12px;
+}
+
+@media (min-width: 768px) {
+  .m-auto {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+}
