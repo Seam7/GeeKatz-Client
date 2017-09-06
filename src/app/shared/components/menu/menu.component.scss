@@ -9,11 +9,14 @@ nav {
 }
 
 .navbar {
+  font-size: 17px;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: $c-primary;
+    display: flex;
+    align-items: center;
 }
 
 .navbar__item {
@@ -24,7 +27,7 @@ nav {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 6px 16px;
     text-decoration: none;
 }
 
