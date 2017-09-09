@@ -10,7 +10,8 @@ export class MenuComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
 
   closeSession(e) {
     e.preventDefault();
