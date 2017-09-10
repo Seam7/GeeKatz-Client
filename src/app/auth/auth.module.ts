@@ -9,6 +9,7 @@ import { AuthRoutingModule } from './auth.routing';
 // components
 import { AuthComponent } from './auth.component';
 import { AuthLoginComponent } from './containers/login/login.component';
+import { AuthRegisterComponent } from './containers/register/register.component';
 
 // services
 import { AuthService } from './auth.service';
@@ -25,6 +26,7 @@ import { AuthService } from './auth.service';
   declarations: [
     AuthComponent,
     AuthLoginComponent,
+    AuthRegisterComponent
   ],
   providers: [
     AuthService

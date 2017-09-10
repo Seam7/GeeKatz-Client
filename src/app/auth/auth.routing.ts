@@ -3,11 +3,11 @@ import { RouterModule, Route } from '@angular/router';
 
 // components
 import { AuthLoginComponent } from './containers/login/login.component';
-// import { AuthRememberPinComponent } from './containers/remember-pin/remember-pin.component';
+import { AuthRegisterComponent } from './containers/register/register.component';
 
 const routes: Route[] = [
   { path: 'auth/login', component: AuthLoginComponent },
-  // { path: 'auth/register', component: AuthRegisterComponent }
+  { path: 'auth/register', component: AuthRegisterComponent }
 
 ];
 

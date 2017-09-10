@@ -14,12 +14,31 @@
   background-color: $c-primary;
 }
 
+.login__form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+
+.login__img {
+  border-radius: 20px;
+  border: solid $c-second;
+  margin-bottom: 30px;
+}
+
 .title {
   color: $c-second;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login__btns {
+  display: flex;
 }
 
 .btn-center {
-  display: flex;
-  align-self: center;
   margin-bottom: 10px;
+  margin-left: 26px;
+  margin-right: 22px;
 }

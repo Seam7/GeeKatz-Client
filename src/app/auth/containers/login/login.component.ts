@@ -36,4 +36,8 @@ export class AuthLoginComponent {
       localStorage.setItem('currentUser', JSON.stringify(response.json()));
     })
   }
+
+  goToRegister(){
+    this.router.navigate(['/auth/register']);
+  }
 }
