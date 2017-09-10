@@ -28,6 +28,12 @@ export class AuthLoginComponent {
   }
 
   onSubmit({value}) {
-    console.log(value);
+    // console.log(value);
+    this.authService.login(value)
+    .subscribe(response => {
+      console.log(response.json());
+      //save token to somewhere
+      localStorage.setItem('currentUser', JSON.stringify(response.json()));
+    })
   }
 }

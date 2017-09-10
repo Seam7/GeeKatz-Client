@@ -9,6 +9,6 @@ export class AuthService {
 
   login(data){
     return this.http
-    .post(`${AppSettings.API_URI}/user/auth/guest`, data);
+    .post(`${AppSettings.API_URI}/user_token`, data);
   }
 }
