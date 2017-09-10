@@ -11,4 +11,8 @@ export class AuthService {
     return this.http
     .post(`${AppSettings.API_URI}/user_token`, data);
   }
+
+  register(data){
+    return this.http.post(`${AppSettings.API_URI}/user`, data)
+  }
 }

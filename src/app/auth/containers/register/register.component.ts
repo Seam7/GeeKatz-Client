@@ -11,7 +11,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class AuthRegisterComponent implements OnInit {
 
   register: FormGroup;
-  constructor() {  }
+  constructor(private router: Router, private authService: AuthService) {  }
 
   ngOnInit() {
     this.register = new FormGroup({
@@ -19,5 +19,22 @@ export class AuthRegisterComponent implements OnInit {
       password: new FormControl(''),
       password_confirmation: new FormControl('')
     })
+  }
+
+  onSubmit({value}) {
+    this.authService.register(value)
+    .subscribe(
+      response => {
+        console.log(response);
+        this.router.navigate(['/auth/login']);
+      },
+      error => {
+        console.log(error.status);
+        if(error.status === 422){
+          //Show "Email unavailable" error
+        } else {
+          //Show server error
+        }
+      });
   }
 }
