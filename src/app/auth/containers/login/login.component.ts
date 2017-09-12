@@ -1,7 +1,7 @@
 import { Component, Input, Output } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../auth.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -21,8 +21,8 @@ export class AuthLoginComponent {
   ngOnInit(){
     this.login = new FormGroup({
       auth: new FormGroup({
-        email: new FormControl(''),
-        password: new FormControl('')
+        email: new FormControl('', [Validators.required, Validators.pattern('.+\@.+\..+')]),
+        password: new FormControl('', [Validators.required, Validators.minLength(6)])
       })
     })
   }

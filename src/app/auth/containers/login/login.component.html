@@ -8,10 +8,24 @@
         <div class="form-group">
           <label for="email">Email</label>
           <input class="form-control" type="text" formControlName="email">
+
+          <div class="error-msg" *ngIf="login.get('auth').get('email').hasError('required') && login.get('auth').get('email').touched">
+            Email is required!
+          </div>
+          <div class="error-msg" *ngIf="login.get('auth').get('email').hasError('pattern') && login.get('auth').get('email').touched">
+            Must be an Email!
+          </div>
         </div>
         <div class="form-group">
           <label for="password">Password</label>
           <input class="form-control" type="password" name="password" formControlName="password">
+
+          <div class="error-msg" *ngIf="login.get('auth').get('password').hasError('required') && login.get('auth').get('password').touched">
+            Password is required!
+          </div>
+          <div class="error-msg" *ngIf="login.get('auth').get('password').hasError('minlength') && login.get('auth').get('password').touched">
+            Password too short! Min is 6
+          </div>
         </div>
       </div>
       <div class="form-group login__btns">
