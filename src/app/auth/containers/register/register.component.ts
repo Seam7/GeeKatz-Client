@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../auth.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'auth-register',
@@ -15,9 +15,11 @@ export class AuthRegisterComponent implements OnInit {
 
   ngOnInit() {
     this.register = new FormGroup({
-      email: new FormControl(''),
-      password: new FormControl(''),
-      password_confirmation: new FormControl('')
+      email: new FormControl('', [Validators.required, Validators.pattern('.+\@.+\..+')]),
+      passwords: new FormGroup({
+        password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+        password_confirmation: new FormControl('', [Validators.required, Validators.minLength(6)])
+      }, this.confirmPass)
     })
   }
 
@@ -36,5 +38,12 @@ export class AuthRegisterComponent implements OnInit {
           //Show server error
         }
       });
+  }
+
+  confirmPass(group: FormGroup) {
+    let pass = group.controls.password.value;
+    let confirm = group.controls.password_confirmation.value;
+
+    return (pass === confirm) ? null : { err: false }
   }
 }
