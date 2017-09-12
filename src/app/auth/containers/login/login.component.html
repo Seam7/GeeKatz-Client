@@ -29,7 +29,7 @@
         </div>
       </div>
       <div class="form-group login__btns">
-        <button type="submit" class="btn btn-second btn-center">Go-z</button>
+        <button type="submit" class="btn btn-second btn-center" [disabled]="login.invalid">Go-z</button>
         <button class="btn btn-second btn-center" (click)="goToRegister()">Register meow</button>
       </div>
     </form>
