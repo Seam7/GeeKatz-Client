@@ -7,15 +7,39 @@
         <div class="form-group">
           <label for="email">Email</label>
           <input class="form-control" type="text" formControlName="email">
+
+          <!-- Error messages -->
+          <div class="error-msg" *ngIf="register.get('email').hasError('required') && register.get('email').touched">
+            Email is required!
+          </div>
+          <div class="error-msg" *ngIf="register.get('email').hasError('pattern') && register.get('email').touched">
+            Must be an Email!
+          </div>
         </div>
         <div formGroupName="passwords">
           <div class="form-group">
             <label for="password">Password</label>
             <input class="form-control" type="password" name="password" formControlName="password">
+
+            <!-- Error messages -->
+            <div class="error-msg" *ngIf="register.get('passwords').get('password').hasError('required') && register.get('passwords').get('password').touched">
+              Password is required!
+            </div>
+            <div class="error-msg" *ngIf="register.get('passwords').get('password').hasError('minlength') && register.get('passwords').get('password').touched">
+              Password too short! Min is 6
+            </div>
           </div>
           <div class="form-group">
             <label for="password_confirm">Confirm Password</label>
             <input class="form-control" type="password" name="password_confirm" formControlName="password_confirmation">
+
+            <!-- Error messages -->
+            <div class="error-msg" *ngIf="register.get('passwords').get('password_confirmation').hasError('required') && register.get('passwords').get('password_confirmation').touched">
+              Must confirm password!
+            </div>
+            <div class="error-msg" *ngIf="register.get('passwords').hasError('mismatch') && register.get('passwords').get('password_confirmation').touched">
+              Passwords dont match!
+            </div>
           </div>
         </div>
       <button type="submit" [disabled]="register.invalid" class="btn btn-second btn-center">Register</button>

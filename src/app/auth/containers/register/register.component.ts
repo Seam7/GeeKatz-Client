@@ -44,6 +44,6 @@ export class AuthRegisterComponent implements OnInit {
     let pass = group.controls.password.value;
     let confirm = group.controls.password_confirmation.value;
 
-    return (pass === confirm) ? null : { err: false }
+    return (pass === confirm) ? null : { mismatch: true }
   }
 }
