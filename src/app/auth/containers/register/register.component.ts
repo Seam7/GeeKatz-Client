@@ -24,7 +24,13 @@ export class AuthRegisterComponent implements OnInit {
   }
 
   onSubmit({value}) {
-    this.authService.register(value)
+    console.log(value);
+    let data = {
+      email: value.email,
+      password: value.passwords.password,
+      password_confirmation: value.passwords.password_confirmation
+    }
+    this.authService.register(data)
     .subscribe(
       response => {
         console.log(response);
